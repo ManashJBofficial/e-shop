@@ -1,2 +1,2 @@
 # e-shop
-MERN based ecommerce web application
+MERN based ecommerce web application by Manash Jyoti Baruah
