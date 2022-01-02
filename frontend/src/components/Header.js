@@ -19,6 +19,7 @@ const Header = () => {
       <Navbar bg='light' variant='light' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
+          
             <Navbar.Brand className='fw-bold'>MJB E-Shop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />

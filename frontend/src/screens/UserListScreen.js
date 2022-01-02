@@ -25,7 +25,7 @@ const UserListScreen = ({history}) => {
         } else {
             history.push('/login')
         }
-    }, [dispatch, history, successDelete])
+    }, [dispatch, history, successDelete, userInfo])
     
     const deleteHandler = (id) => {
         if (window.confirm('Are you sure')) {
@@ -56,7 +56,7 @@ const UserListScreen = ({history}) => {
                                 <td><a href={`mailTo:${user.email}`}>{user.email}</a></td>
                                 <td>{user.isAdmin ? <i className='fas fa-check' style={{color:'green'}}></i> : <i className='fas fa-times' style={{color:'red'}}></i>}</td>
                                 <td>
-                                    <LinkContainer to={`/user/${user._id}/edit`}>
+                                    <LinkContainer to={`/admin/user/${user._id}/edit`}>
                                         <Button variant='light' className='btn-sm'>
                                             <i className='fas fa-edit'></i>
                                         </Button>
