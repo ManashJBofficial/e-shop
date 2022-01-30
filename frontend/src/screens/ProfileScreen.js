@@ -50,7 +50,6 @@ const ProfileScreen = ({ location, history }) => {
             dispatch(updateUserProfile({id:user._id,name,email,password}))
         }
         }
-    
         return (
         <Row>
             <Col md={3}>
@@ -131,7 +130,7 @@ const ProfileScreen = ({ location, history }) => {
                                     : (
                                         <i className='fas fa-times' style={{color:'red'}}></i>
                                     ) }</td>
-                                    <td >{order.isdelivered ? order.deliveredAt.substring(0,10) 
+                                    <td >{order.isDelivered ? order.deliveredAt.substring(0,10) 
                                     : (
                                         <i className='fas fa-times' style={{color:'red'}}></i>
                                     ) }</td>
