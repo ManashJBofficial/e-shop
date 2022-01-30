@@ -29,12 +29,18 @@ const PlaceOrderScreen = ({history}) => {
 
     const { order, success, error } = orderCreate
 
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin
+
     useEffect(() => {
         if (success) {
             history.push(`/order/${order._id}`)
         }
+        if(!userInfo) {
+            history.push('/login')
+        }
         // eslint-disable-next-line
-    }, [history, success])
+    }, [history, success,userInfo])
 
     const placeOrderHandeler =() =>{
 
@@ -134,7 +140,7 @@ const PlaceOrderScreen = ({history}) => {
 
                                         <ListGroup.Item>
                                         <Row>
-                                            <Button type='button' className='btn-block' disabled={cart.cartItems===0} 
+                                            <Button type='button' className='btn w-100' disabled={cart.cartItems===0} 
                                             onClick={placeOrderHandeler}>Place Order</Button>
                                         </Row>
                                     </ListGroup.Item>
