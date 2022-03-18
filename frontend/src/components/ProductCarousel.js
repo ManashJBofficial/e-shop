@@ -6,10 +6,6 @@ import Loader from "./Loader";
 import Message from "./Message";
 import { listTopProducts } from "../actions/productActions";
 
-// import ReactDOM from "react-dom";
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from "react-responsive-carousel";
-
 const ProductCarousel = () => {
   const dispatch = useDispatch();
 
@@ -41,31 +37,6 @@ const ProductCarousel = () => {
         ))}
       </Carousel>
     </>
-
-    // <>
-    //   <div>
-    //     <Carousel
-    //       autoPlay
-    //       showThumbs={false}
-    //       swipeable
-    //       width="100%"
-    //       stopOnHover
-    //       infiniteLoop
-    //       emulateTouch
-    //     >
-    //       {products.map((product) => (
-    //         <div key={product._id} interval={4000}>
-    //           <Link to={`/product/${product._id}`}>
-    //             <img src={product.image} alt={product.name} />
-    //             <p className="legend">
-    //               {product.name} (${product.price})
-    //             </p>
-    //           </Link>
-    //         </div>
-    //       ))}
-    //     </Carousel>
-    //   </div>
-    // </>
   );
 };
 
