@@ -20,6 +20,7 @@
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "swiper": "7.3.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

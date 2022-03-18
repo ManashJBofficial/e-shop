@@ -1,12 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Carousel, Image } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Loader";
 import Message from "./Message";
 import { listTopProducts } from "../actions/productActions";
 
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
+import SwiperCore, { Autoplay, Navigation } from "swiper";
+import "swiper/swiper.min.css";
+import "swiper/modules/pagination/pagination.min.css";
+
 const ProductCarousel = () => {
+  SwiperCore.use([Autoplay]);
   const dispatch = useDispatch();
 
   const productTopRated = useSelector((state) => state.productTopRated);
@@ -22,20 +28,30 @@ const ProductCarousel = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      <Carousel variant="dark" pause="hover" className="bg-dark" fade>
+      <Swiper
+        loop
+        spaceBetween={30}
+        slidesPerView={2}
+        autoplay={{ delay: 3000 }}
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        navigation={true}
+        onSwiper={(swiper) => (window.swiper = swiper)}
+        modules={[Autoplay, Navigation]}
+      >
         {products.map((product) => (
-          <Carousel.Item key={product._id} interval={4000}>
+          <SwiperSlide key={product._id}>
             <Link to={`/product/${product._id}`}>
-              <Image src={product.image} alt={product.name} fluid />
+              <img src={product.image} alt={product.name} />
               <Carousel.Caption className="carousel-caption">
                 <h2>
                   {product.name} (${product.price})
                 </h2>
               </Carousel.Caption>
             </Link>
-          </Carousel.Item>
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
     </>
   );
 };
