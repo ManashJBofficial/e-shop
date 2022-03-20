@@ -1,16 +1,22 @@
+@import url("https://free.bboxtype.com/embedfonts/?family=FiraGO:400");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces&display=swap");
 main {
   min-height: 80vh;
+  font-family: "FiraGO", sans-serif;
 }
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
+  font-family: "Fraunces", serif;
 }
 h2 {
   font-size: 1.4rem;
   padding: 0.5rem 0;
+  font-family: "Fraunces", serif;
 }
 h3 {
   padding: 1rem 0;
+  font-family: "Fraunces", serif;
 }
 .rating span {
   margin: 0.1rem;
