@@ -12,7 +12,7 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: "Welcome To MJB e-shop",
+  title: "Welcome To Easykart",
   description: "Best Online Shopping Site for Mobiles and Electronics",
   keywords: "electronics, buy electronics, cheap electroincs",
 };
